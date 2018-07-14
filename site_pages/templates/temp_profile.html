@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Doggo is gud</title>
+</head>
+<body>
+	{% extends 'base.html' %}
+
+	{% block content %}
+	<h1><p align = center>Profile</p></h1>
+	
+		<form class="form-inline">
+			<p align = center>
+	    		<button type="submit" formaction="{% url 'home' %}">Push me<br>and then just touch me</button>
+	    	</p>
+	    </form> 
+
+	{% endblock %}
+</body>
+</html>

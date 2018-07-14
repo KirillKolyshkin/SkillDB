@@ -1,16 +1,16 @@
 from django.template import RequestContext, loader
 from django.http import HttpResponse
-from .models import Skill
+from .models import Student
 from django.shortcuts import render
 
 def index(request):
-    skill_list = Skill.objects.order_by('-name')[:1]
+    skill_list = Student.objects.order_by('-group').all#[:1]
     context = {'skill_list': skill_list}
     return render(request, 'polls/index.html', context)
 
 
-def detail(request, question_id):
-    return HttpResponse("You're looking at question %s." % question_id)
+def detail(request, email):
+    return HttpResponse("You can write this student at  %s" % email)
 
 def results(request, question_id):
     response = "You're looking at the results of question %s."
