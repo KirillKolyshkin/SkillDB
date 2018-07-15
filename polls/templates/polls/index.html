@@ -6,10 +6,10 @@
 </head>
 <body>
 
-{% if skill_list %}
+{% if students %}
     <ul>
-    {% for student in skill_list %}
-        <li><a href="/polls/{{ student.user.email }}/">{{ student.user }} {{ student.group }}</a></li>
+    {% for student in students %}
+        <li><a href="/polls/{{ student.skills.first }}/">{{ student.user }} {{ student.group }}</a></li>
     {% endfor %}
     </ul>
 {% else %}
