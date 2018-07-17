@@ -5,6 +5,24 @@ from .models import Skill
 from .models import TemporaryModel
 from django.shortcuts import render
 
+
+def addSkill(request, student, skill, lvl):
+    m = TemporaryModel.objects.create(user_id=student, skill_id=skill, lvl=lvl)
+    m.save()
+    context = {'student': student}
+    return render(request, 'polls/index.html', context)# страницу сами нужную вставите
+
+
+def getSkills(request, student):
+    context = {'student': student}
+    return render(request, 'polls/index.html', context)  # страницу сами нужную вставите
+
+
+def GetStudentsBySkill(request, needed_skill):
+    students = [s for s in Student.objects.all() if s.skills.contains(needed_skill)]
+    return students
+
+
 def index(request):
     '''stud_ent = Student.objects.all().last()
     ski_ll = Skill.objects.create(name='SoHard')

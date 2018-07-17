@@ -9,7 +9,7 @@
 {% if students %}
     <ul>
     {% for student in students %}
-        <li><a href="/polls/{{ student.skills.first }}/">{{ student.user }} {{ student.group }}</a></li>
+        <li><a href="/polls/{{ student.skills.first }}/">{{ student.user }} {{ student.skills.all }}</a></li>
     {% endfor %}
     </ul>
 {% else %}
@@ -17,7 +17,7 @@
 {% endif %}
 <form class="form-inline">
 			<p align = center>
-	    		<button type="submit" formaction="{% url 'home' %}">Push me<br>and then just touch me</button>
+	    		<button type="submit" formaction="{% url 'about' %}">Push me<br>and then just touch me</button>
 	    	</p>
 </form>
 </body>
