@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student skills</title>
+</head>
+<body>
+{% if student %}
+    {% for skill in student.skills %}
+        {{ skill.name }}
+    {% endfor %}
+</body>
+</html>

@@ -6,16 +6,17 @@ from .models import TemporaryModel
 from django.shortcuts import render
 
 
+def student_show_skills_view(request, username):
+    student = Student.objects.get(username=username)
+    return render(request, 'polls/student_skills.html', {'student': student})
+
+
+
 def addSkill(request, student, skill, lvl):
     m = TemporaryModel.objects.create(user_id=student, skill_id=skill, lvl=lvl)
     m.save()
     context = {'student': student}
     return render(request, 'polls/index.html', context)# страницу сами нужную вставите
-
-
-def getSkills(request, student):
-    context = {'student': student}
-    return render(request, 'polls/index.html', context)  # страницу сами нужную вставите
 
 
 def GetStudentsBySkill(request, needed_skill):
@@ -51,36 +52,20 @@ def SortBySkillAmount(students):
 
 
 def index(request):
-    '''stud_ent = Student.objects.all().last()
-    ski_ll = Skill.objects.create(name='SoHard')
-    m1 = TemporaryModel(user_id=stud_ent, skill_id=ski_ll, lvl=5)
-    m1.save()'''
-
-
     students = Student.objects.all()
     skills = Skill.objects.all()
-    '''skill = Skill.objects.create(name='SoHard')
-    temp = TemporaryModel.objects.all()'''
     for student in students:
         for skill in skills:
             m = TemporaryModel.objects.create(user_id=student, skill_id=skill,
             lvl=5)
             m.save()
-    '''something = students.skills.all()
-    #skill_list = Student.objects.order_by('-group').all#[:1]'''
     context = {'students': students} #,'smth':something}
     return render(request, 'polls/index.html', context)
 
 
-def detail(request, skills):
-    return HttpResponse(" %s" % skills)
-
-def results(request, question_id):
-    response = "You're looking at the results of question %s."
-    return HttpResponse(response % question_id)
-
-def vote(request, question_id):
-    return HttpResponse("You're voting on question %s." % question_id)
+def getSkills(request, user):
+    student = Student.objects.get(user=user)
+    return render(request, 'polls/student_skills.html', {'student':student})  # страницу сами нужную вставите
 
 
 

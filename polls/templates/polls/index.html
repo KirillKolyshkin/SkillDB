@@ -7,18 +7,16 @@
 <body>
 
 {% if students %}
-    <ul>
-    {% for student in students %}
-        <li><a href="/polls/{{ student.skills.first }}/">{{ student.user }} {{ student.skills.all }}</a></li>
+    <!--<ul>-->
+    {% for std in students %}
+        <!--<li><a href="/polls/{{ student.skills.all }}/">{{ student.user }} {{ student.group }}</a></li>-->
+        <br>
+        <h3><a href="{% url 'show_skills' user=std.user%}">{{ std.user }}</a></h3>
+        {{ std.group }}
     {% endfor %}
-    </ul>
+    <!--</ul>-->
 {% else %}
     <p>No polls are available.</p>
 {% endif %}
-<form class="form-inline">
-			<p align = center>
-	    		<button type="submit" formaction="{% url 'about' %}">Push me<br>and then just touch me</button>
-	    	</p>
-</form>
 </body>
 </html>
