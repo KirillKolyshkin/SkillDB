@@ -69,3 +69,12 @@ img{
 .table-skill{
 	z-index: 5;
 }
+
+.bgbg{
+	z-index: -1;
+    background-image: none;
+}
+
+.form-skill{
+    z-index: 1;
+}
