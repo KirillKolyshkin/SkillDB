@@ -1,0 +1,71 @@
+body{
+	font-family: 'Open Sans', sans-serif;
+	font-size: 16px;
+	color: #868585;
+	font-weight: normal;
+}
+
+img{
+	max-width: 100%;
+	height: auto;
+}
+.form-inline{
+	margin-right: 17%;
+}
+
+.logout{
+	
+}
+
+.back-to-search{
+	margin-left: 52%;
+}
+
+.btn-outline-success {
+	margin-right: 15px;
+}
+
+.navbar-brand{
+	margin-left: 14%;
+}
+
+.navbar-text{
+	font-family: 'Open Sans', sans-serif;
+	font-size: 11px;
+	color: #868585;
+	font-weight: normal;
+	margin-right: 13%;
+}
+
+.navbar-nav{
+	margin-left: 13%;
+}
+
+/*.search{*/
+	/*margin-top: 5%;*/
+	/*margin-left: 15%;*/
+	/*display: inline-block;*/
+/*}*/
+
+.form-inline {
+    display: flex;
+    width: auto;
+}
+
+.custom-select{
+	margin-bottom: 30px;
+}
+
+
+.search-button {
+	margin-top: 20%;
+	margin-left: 75.5%;
+}
+
+.bg{
+	z-index: -3;
+}
+
+.table-skill{
+	z-index: 5;
+}

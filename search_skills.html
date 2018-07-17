@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&amp;subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Search skill</title>
+  </head>
+
+  <body>
+   <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">
+      <img src="img/logo.png" width="55" height="55" alt=""> </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-lg-end" id="navbarSupportedContent">
+        <form class="form-inline">
+          <button class="btn btn-sm btn-outline-secondary" type="button">LOG OUT</button>
+        </form>
+      </div>
+    </nav>
+   </header>
+
+   <form>
+     <div class="form-row align-items-center justify-content-lg-center">
+       <div class="col-lg-5 mt-5 ml-5"> <!-- Окно поиска -->
+         <label class="sr-only" for="inlineFormInputName">Name</label>
+         <input type="text" class="form-control" id="inlineFormInputName" placeholder="Search">
+       </div>
+       <div class="col-lg-2 mt-5"> <!-- Выбор уровня -->
+         <label class="mr-sm-2" for="inlineFormCustomSelect">Level</label>
+         <select class="custom-select mr-sm-2 " id="inlineFormCustomSelect">
+           <option selected>Choose your level...</option>
+           <option value="1">5 (High)</option>
+           <option value="2">4 (Above the middle)</option>
+           <option value="3">3 (Middle)</option>
+           <option value="4">2 (Below the middle)</option>
+           <option value="5">1 (Low)</option>
+         </select>
+       </div>
+       <div class="col-lg-1 mt-5"> <!-- Кнопочка-->
+         <button type="submit" class="btn btn-primary">Add</button>
+       </div>
+     </div>
+   </form>
+
+    <style>
+      body {
+        background-image: url(img/bg_skills.jpg);
+      }
+    </style>
+
+
+    <div class="col-xl-2 col-lg-2">
+       <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Skill`s level">
+           Skill`s name
+       </button>
+    </div>
+
+   <footer>
+    <nav class="navbar fixed-bottom navbar-expand-lg navbar-light bg-light">
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+        </ul>
+        <span class="navbar-text">
+          Copyright &copy; 2018 Need for skill. All rights reserved.
+        </span>
+      </div>
+    </nav>
+  </footer>
+
+
+   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+
+   <script>
+       $(document).ready (function () {
+           $('[data-toggle="tooltip"]').tooltip();
+       });
+   </script>
+  </body>
+</html>
