@@ -23,6 +23,33 @@ def GetStudentsBySkill(request, needed_skill):
     return students
 
 
+def byName_key(student):
+    return student.user
+
+
+def SortByName(students):
+    students = sorted(students, key=byName_key)
+    return students
+
+
+def byGroup_key(student):
+    return student.group
+
+
+def SortByGroup(students):
+    students = sorted(students, key=byGroup_key)
+    return students
+
+
+def bySkills_key(student):
+    return student.skills.count
+
+
+def SortBySkillAmount(students):
+    students = sorted(students, key=bySkills_key)
+    return students
+
+
 def index(request):
     '''stud_ent = Student.objects.all().last()
     ski_ll = Skill.objects.create(name='SoHard')
