@@ -58,7 +58,7 @@ def search_result_view(request):
     return render(request, 'skill_db/search_result.html', {'students': students})
 
 
-# @login_required(login_url="login")
+@login_required(login_url="login")
 def search_skills_view(request):
     return render(request, 'skill_db/search_skills.html')
 
