@@ -25,10 +25,10 @@ def login_view(request):
             # log in the useh
             user = form.get_user()
             login(request, user)
-            # if 'next' in request.POST:
-            #     return redirect(request.POST.get('next'))
-            # else:
-            #     return redirect('home')
+            if 'next' in request.POST:
+                return redirect(request.POST.get('next'))
+            else:
+                return redirect('home')
     else:
         form = AuthenticationForm()
     return render(request, 'skill_db/login.html', {'form': form})
@@ -58,9 +58,9 @@ def search_result_view(request):
     return render(request, 'skill_db/search_result.html', {'students': students})
 
 
-@login_required(login_url="login")
+# @login_required(login_url="login")
 def search_skills_view(request):
-    return render(request, 'skill_db/search_result.html')
+    return render(request, 'skill_db/search_skills.html')
 
 @login_required(login_url="login")
 def student_profile_view(request):
