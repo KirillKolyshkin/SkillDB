@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Filter result(testmode)</title>
+</head>
+<body>
+	{% extends 'base.html' %}
+
+    {% block content %}
+    <form method="get">
+        {{ filter.form.as_p }}
+        <button type="submit">Search</button>
+    </form>
+    <ul>
+    {% for user in filter.qs %}
+        <li>Пользователь {{user.user}} из группы {{user.group}}</li>
+    {% endfor %}
+    </ul>
+    {% endblock %}
+
+</body>
+</html>

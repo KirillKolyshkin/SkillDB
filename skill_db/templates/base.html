@@ -1,0 +1,127 @@
+{% load static %}
+<!--
+{% static "img/logo.png" as logo %}
+{% static "img/bd_main2.jpg" as bg_main %}
+{% static "img/bg_skills.jpg" as bg_skills %}
+
+{% static "css/bootstrap.min.css" as bootstrap_min %}
+{% static "css/style.css" as bootstrap %}
+
+{% url 'home' as home %}
+{% url 'temp_profile' as temp_profile %}
+{% url 'search_skills' as search_skills %}
+{% url 'search_result' as search_result%}
+{% url 'about' as about %}
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	{% block head%}
+<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&amp;subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <style>
+	    body {
+	    	background-image: url({% static 'img/bg_skills.jpg' %});
+	    }
+    </style>
+
+    <title>Need for skill</title>
+    {% endblock %}
+</head>
+<body>
+	{% block header %}
+	   <header>
+	    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+	      <a class="navbar-brand" href="{% url 'home' %}">
+	      <img src="{% static "img/logo.png" %}" width="55" height="55" alt=""> </a>
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="navbar-toggler-icon"></span>
+	      </button>
+
+	      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+	        <ul class="navbar-nav mr-auto">
+
+	          <!-- <li class="nav-item active">
+	            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+	          </li> -->
+
+	        </ul>
+
+            {% if request.path == "/" %}
+
+	        <form class="form-inline">
+	          <button class="btn btn-outline-success" type="submit" formaction="{{ temp_profile }}">Student's page</button>
+	        </form>
+            <form class="form-inline">
+			  <button class="btn btn-sm btn-outline-secondary" type="submit" formaction="{{ search_skills }}">Staff page</button>
+			</form>
+            <form class="form-inline" action="accounts/signup" method="get">
+			  <button class="btn btn-sm btn-outline-secondary" type="submit">Sign Up page</button>
+			</form>
+            <form class="form-inline" action="accounts/login" method="get">
+			  <button class="btn btn-sm btn-outline-secondary" type="submit">Login page</button>
+			</form>
+            <form class="form-inline" action="accounts/logout" method="get">
+			  <button class="btn btn-sm btn-outline-secondary" type="submit">GET ME OUT</button>
+			</form>
+
+            <form class="form-inline">
+			  <button class="btn btn-sm btn-outline-secondary" type="submit" formaction="{{ searcher }}">Searcher page</button>
+			</form>
+
+            {% endif %}
+
+	        {% if 'search_result' in request.path %}
+	        <form class="back-to-search form-inline" action = "{% url 'search_skills' %}">
+	          <button class="btn btn-sm btn-outline-secondary" type="submit">Back to search</button>
+	        </form>
+
+	        <form class="form-inline" action = "{% url 'home' %}">
+	          <button class="btn btn-sm btn-outline-secondary" type="submit" value>LOG OUT</button>
+	        </form>
+
+	        {% endif %}
+
+	        {% if 'search_skills' in request.path %}
+	        <form class="form-inline" action = "{% url 'home' %}">
+	          <button class="btn btn-sm btn-outline-secondary" type="submit" value>LOG OUT</button>
+	        </form>
+	        {% endif %}
+
+	      </div>
+	    </nav>
+	   </header>
+	{% endblock%}
+
+	{% block content %}
+
+	{% endblock %}
+
+	{% block footer %}
+		<footer>
+	      <nav class="navbar fixed-bottom navbar-expand-lg navbar-light bg-light">
+	        <div class="collapse navbar-collapse" id="navbarText">
+	          <ul class="navbar-nav mr-auto">
+	            <li class="nav-item">
+	              <a class="nav-link" href="{% url 'about' %}">About</a>
+	            </li>
+	          </ul>
+	          <span class="navbar-text">
+	            Copyright &copy; 2018 Need for skill. All rights reserved.
+	          </span>
+	        </div>
+	      </nav>
+	    </footer>
+    {% endblock %}
+</body>
+</html>

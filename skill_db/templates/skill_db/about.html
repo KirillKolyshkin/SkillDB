@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Doggo is gud</title>
+</head>
+<body>
+	{% extends 'base_old.html' %}
+
+	{% block content %}
+	<h1>About page.</h1>
+
+	<!--<h2>{{ user.get_full_name }}</h2>-->
+	<ul>
+  		<li>Username: {{ user.username }}</li>
+		<li>Group: {{ user.group }}</li>
+  		<!--<li>Location: {{ user.profile.location }}</li>-->
+  		<!--<li>Birth Date: {{ user.profile.birth_date }}</li>-->
+	</ul>
+	{% endblock %}
+</body>
+</html>

@@ -1,0 +1,32 @@
+{% extends 'base_old.html' %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Doggo is gud</title>
+</head>
+<body>
+	{% block content %}
+		<br>
+		<div class="content" align=center>
+			<p >			
+				{% if skill_list %}
+				    <ul>
+				    {% for student in skill_list %}
+				        <li><a href="/testing/{{ student.user.username }}/">{{ student.user.first_name }} {{ student.user.last_name }} </a></li>
+				    {% endfor %}
+				    </ul>
+				{% else %}
+				    <p>No users are available.</p>
+				{% endif %}
+				<br>
+				<form class="form-inline">
+					<p align = center>
+					    <button type="submit" formaction="{% url 'home' %}">Push me<br>and then just touch me</button>
+					</p>
+				</form>		
+			</p>
+		</div>
+	{% endblock %}
+<img src="">
+</body>
+</html>

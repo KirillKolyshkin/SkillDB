@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  </head>
+  <body>
+   
+
+    {% block content %}
+      <div class="table-skill container" style="padding-top: 5%; ">
+       <table class="table table-striped table-bordered table-hover"  style="background-color: white">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">First</th>
+              <th scope="col">Last</th>
+              <th scope="col">e-mail</th>
+              <th scope="col">ID</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row" >1</th>
+              <td>Kirill</td>
+              <td>Kolyshkin</td>
+              <td>@mdo</td>
+              <td>4543</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Artur</td>
+              <td>Asanov</td>
+              <td>@fat</td>
+              <td>23455</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Vova</td>
+              <td>Ananyev</td>
+              <td>@twitter</td>
+              <td>16654</td>
+            </tr>
+          </tbody>
+        </table>
+       </div>
+    {% endblock %}
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+  </body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Common sign up page (in progress)</title>
+</head>
+<body>
+	{% extends 'base.html' %}
+
+	{% block content %}
+	<h1><p align = center>Sign up</p></h1>
+
+	<form method="post">
+    	{% csrf_token %}
+    	{{ form.as_p }}
+    	<button type="submit">Sign up</button>
+	</form>
+	{% endblock %}
+
+</body>
+</html>
