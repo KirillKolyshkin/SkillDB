@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>Cool 404 Page</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- //for-mobile-apps -->
+<link href="{% static 'css/style404.css' %}" rel="stylesheet" type="text/css" media="all" />
+<link href='//fonts.googleapis.com/css?family=Viga' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<div class="main">
+		<div class="nav_w3l">
+			<ul>
+				<li class="active"><a href="{% url 'home' %}">Home</a></li>
+				<li><a href="{% url '404' %}" class="hvr-sweep-to-bottom">About Us</a></li>
+			</ul>
+		</div>
+		<h1>404</h1>
+		<h2>ooops, something went wrong</h2>
+		<div class="more_w3ls">
+			<a href="{% url '404' %}">Try Once Again</a>
+		</div>
+		<div class="wthree_social_icons">
+			<!-- <div>
+				<a href="#"><span>Facebook</span></a>
+				<a href="#"><span>Twitter</span></a>
+				<a href="#"><span>Tumblr</span></a>
+				<a href="#"><span>LinkedIn</span></a>
+				<a href="#"><span>Vimeo</span></a>
+			</div> -->
+		</div>
+		<div class="copyright">
+			<p>Copyright <a href="{% url 'egg' %}">&copy</a>; 2018 Need for skill. All rights reserved.</p>
+		</div>
+	</div>
+</body>
+</html>

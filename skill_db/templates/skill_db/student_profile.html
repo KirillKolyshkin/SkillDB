@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block content %}
+<form>
+  <div class="form-row align-items-center justify-content-lg-center">
+    <div class="col-lg-5 mt-5 ml-5"> <!-- Окно поиска -->
+      <label class="sr-only" for="inlineFormInputName">Name</label>
+      <input type="text" class="form-control" id="inlineFormInputName" placeholder="Search">
+    </div>
+    <div class="col-lg-2 mt-5"> <!-- Выбор уровня -->
+      <label class="mr-sm-2" for="inlineFormCustomSelect">Level</label>
+      <select class="custom-select mr-sm-2 " id="inlineFormCustomSelect">
+        <option selected>Choose your level...</option>
+        <option value="1">5 (High)</option>
+        <option value="2">4 (Above the middle)</option>
+        <option value="3">3 (Middle)</option>
+        <option value="4">2 (Below the middle)</option>
+        <option value="5">1 (Low)</option>
+      </select>
+    </div>
+    <div class="col-lg-1 mt-5"> <!-- Кнопочка-->
+      <button type="submit" class="btn btn-primary">Add skill</button>
+    </div>
+  </div>
+</form>
+
+
+<form>
+    <div class="form-skill form-row align-items-center justify-content-lg-center mt-5 mr-5">
+         <div class="col-xl-1 col-lg-1">
+            <button type="button" class="btn btn-outline-success" data-toggle="tooltip" data-placement="top" title="Skill`s level">
+                Skill`s name[1]
+            </button>
+         </div>
+
+        <div class="col-xl-1 col-lg-1 offset-1">
+            <button type="button" class="btn btn-outline-success" data-toggle="tooltip" data-placement="top" title="Skill`s level">
+                Skill`s name[2]
+            </button>
+        </div>
+
+        <div class="col-xl-1 col-lg-1 offset-1">
+            <button type="button" class="btn btn-outline-success" data-toggle="tooltip" data-placement="top" title="Skill`s level">
+                Skill`s name[3]
+            </button>
+        </div>
+
+        <div class="col-xl-1 col-lg-1 offset-1">
+            <button type="button" class="btn btn-outline-success" data-toggle="tooltip" data-placement="top" title="Skill`s level">
+                Skill`s name[4]
+            </button>
+        </div>
+    </div>
+    <!-- <div class="search-button container">
+      <form class="form-inline" action = "{% url 'search_result' %}">
+        <button type="submit" class="btn btn-primary">Search</button>
+      </form>
+   </div> -->
+</form>>
+
+
+{% endblock %}

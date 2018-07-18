@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="table-skill container" style="padding-top: 5%; ">
+  <!--
+  <table class="table table-striped table-bordered table-hover"  style="background-color: white">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First name</th>
+        <th scope="col">Last name</th>
+        <th scope="col">e-mail</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row" >1</th>
+        <td>Kirill</td>
+        <td>Kolyshkin</td>
+        <td>dum@dum.dum</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Artur</td>
+        <td>Asanov</td>
+        <td>dam@dam.dam</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>Vova</td>
+        <td>Ananyev</td>
+        <td>duh@duh.duh</td>
+      </tr>
+    </tbody>
+  </table>
+  -->
+  {% for std in students %}
+    <br>
+    <h3><a href="{% url 'student_detail' user=std %}">{{ std.user }}</a></h3>
+    {{ std.group }}
+  {% endfor %}
+
+</div>
+{% endblock %}
